@@ -11,6 +11,22 @@
             box-sizing: border-box;
         }
 
+        *::selection {
+            background: rgba(93, 173, 226, 0.3);
+            color: inherit;
+        }
+
+        nav a {
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            border: none;
+        }
+
+        nav a:focus {
+            outline: none;
+            border: none;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -52,31 +68,12 @@
             font-weight: 500;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: white;
-            transition: width 0.3s ease;
-        }
-
         nav a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
         nav a.active {
             background: rgba(255, 255, 255, 0.2);
-        }
-
-        nav a.active::after {
-            width: 100%;
         }
 
         .container {
@@ -200,6 +197,7 @@
             text-decoration: none;
             position: relative;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .contact-info a::after {
@@ -742,10 +740,10 @@
 
     <nav>
         <ul>
-            <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
-            <li><a href="#" onclick="showPage('about')" class="nav-link">About Me</a></li>
-            <li><a href="#" onclick="showPage('projects')" class="nav-link">Projects</a></li>
-            <li><a href="#" onclick="showPage('contact')" class="nav-link">Contact</a></li>
+            <li><a href="#" onclick="showPage('home', event)" class="nav-link active">Home</a></li>
+            <li><a href="#" onclick="showPage('about', event)" class="nav-link">About Me</a></li>
+            <li><a href="#" onclick="showPage('projects', event)" class="nav-link">Projects</a></li>
+            <li><a href="#" onclick="showPage('contact', event)" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
@@ -763,7 +761,7 @@
             <div class="hero-section">
                 <h2>Welcome!</h2>
                 <p>I'm a Carnegie Mellon University student passionate about mathematics, programming, and building community. Explore my journey through academics, leadership, and creative projects.</p>
-                <a href="#" onclick="showPage('about')" class="cta-button">Learn More About Me</a>
+                <a href="#" onclick="showPage('about', event)" class="cta-button">Learn More About Me</a>
             </div>
 
             <div class="content">
@@ -771,20 +769,16 @@
                     <h2>Quick Highlights</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h3>🎓 Student</h3>
+                            <h3>🎓 Academics</h3>
                             <p>Mathematical Sciences at CMU<br>GPA: 3.70/4.00</p>
                         </div>
                         <div class="skill-category">
-                            <h3>🏠 Leader</h3>
+                            <h3>🏠 Employment</h3>
                             <p>Resident Assistant<br>Community Advisor</p>
                         </div>
                         <div class="skill-category">
-                            <h3>💻 Programmer</h3>
+                            <h3>💻 Skills</h3>
                             <p>Python, LaTeX<br>Computer Science</p>
-                        </div>
-                        <div class="skill-category">
-                            <h3>🌟 Achiever</h3>
-                            <p>Dean's List<br>2024-2025</p>
                         </div>
                     </div>
                 </section>
@@ -807,7 +801,7 @@
             <div class="content">
                 <section>
                     <h2>About Me</h2>
-                    <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a focus on Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests span discrete mathematics, financial mathematics, and computer science, and I'm always eager to learn and take on new challenges.</p>
+                    <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a concentration in Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests include discrete and financial mathematics and computer science, and I'm always eager to learn and take on new challenges.</p>
                 </section>
 
                 <section>
@@ -818,7 +812,7 @@
                             <span class="item-date">Expected May 2028</span>
                         </div>
                         <div class="item-subtitle">Bachelor of Science in Mathematical Sciences (Discrete Mathematics and Logic)</div>
-                        <div class="item-subtitle">Current GPA: 3.70/4.00 | Pittsburgh, PA</div>
+                        <div class="item-subtitle">Current QPA: 3.69/4.00 | Pittsburgh, PA</div>
                     </div>
                 </section>
 
@@ -925,12 +919,131 @@
                     <h2>Featured Projects</h2>
                     <div class="project-grid">
                         <div class="project-card">
-                            <h3>📊 Mathematical Research</h3>
-                            <p>Exploring discrete mathematics and logic through coursework projects. Focus areas include graph theory, combinatorics, and formal proof techniques.</p>
+                            <h3>German - English Interactive Translator</h3>
+                            <p>
+                                <a href="https://academy.cs.cmu.edu/sharing/grayFox193177">View Project</a>
+                            </p>
                         </div>
                         <div class="project-card">
                             <h3>💻 Python Programming</h3>
                             <p>Building computational solutions and data analysis tools using Python. Projects include algorithms implementation and problem-solving applications.</p>
                         </div>
                         <div class="project-card">
-                            <h3>🏠 Community
+                            <h3>🏠 Community Building</h3>
+                            <p>Organizing events and programs for 300+ residents as RA. Creating inclusive environments that foster connection, growth, and academic success.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>📈 Financial Analysis</h3>
+                            <p>Applying mathematical concepts to financial modeling and analysis through coursework in mathematical finance, accounting, and microeconomics.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>✍️ Academic Writing</h3>
+                            <p>Creating technical documentation and reports using LaTeX. Developing clear communication of complex mathematical and computational concepts.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>🌐 Personal Website</h3>
+                            <p>This website! Built to showcase my academic journey, leadership experience, and projects. Featuring interactive design and responsive layout.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Coursework Highlights</h2>
+                    <div class="item-subtitle" style="margin-top: 10px; line-height: 1.8;">
+                        <strong>Mathematics:</strong> Discrete Mathematics, Concepts of Mathematics<br>
+                        <strong>Programming:</strong> Principles of Computing, Fundamentals of Programming and Computer Science (Python)<br>
+                        <strong>Finance:</strong> Introduction to Mathematical Finance, Introduction to Accounting, Principles of Microeconomics
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="container">
+            <header>
+                <h1>Get In Touch</h1>
+                <div class="contact-info">
+                    Let's connect and collaborate!
+                </div>
+            </header>
+
+            <div class="content">
+                <section>
+                    <h2>Contact Methods</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>📧 Email</h3>
+                            <a href="mailto:lvannette18@gmail.com">lvannette18@gmail.com</a>
+                        </div>
+                        <div class="contact-method">
+                            <h3>📱 Phone</h3>
+                            <p>(814) 602-6643</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>💼 LinkedIn</h3>
+                            <a href="https://linkedin.com/in/lauren-vannette-693a76374" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Send Me a Message</h2>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Layout and wording generated with Claude Sonnet 4.5 | © 2026 Lauren VanNette</p>
+    </footer>
+
+    <script>
+        function showPage(pageName, event) {
+            event.preventDefault();
+            
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.getElementById(pageName).classList.add('active');
+            event.target.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! This is a demo form. In a live website, this would send your message to Lauren.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
