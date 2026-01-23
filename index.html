@@ -254,13 +254,13 @@
         ul {
             margin-left: 20px;
             color: #5f6368;
+            list-style-position: outside;
         }
 
         li {
             margin-bottom: 8px;
             transition: all 0.2s ease;
             position: relative;
-            padding-left: 5px;
         }
 
         li:hover {
@@ -268,19 +268,22 @@
             transform: translateX(5px);
         }
 
-        li::before {
+        li::marker {
+            color: #5f6368;
+        }
+
+        li::after {
             content: '';
             position: absolute;
-            left: -20px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: -25px;
+            bottom: 0;
             width: 0;
             height: 2px;
             background: #3498DB;
             transition: width 0.3s ease;
         }
 
-        li:hover::before {
+        li:hover::after {
             width: 15px;
         }
 
@@ -498,11 +501,12 @@
                         <span class="item-title">Community Advisor - Carnegie Mellon Residential Education</span>
                         <span class="item-date">Starting August 2026</span>
                     </div>
-                    <div class="item-subtitle">Erie, PA</div>
+                    <div class="item-subtitle">Pittsburgh, PA</div>
                     <ul>
-                        <li>...</li>
-                        <li>...</li>
-                        <li>...</li>
+                        <li>Provide leadership, vision, and direction for daily activities in a residential house community</li>
+                        <li>Lead and supervise a team of Resident Assistants to support residents and maintain community standards</li>
+                        <li>Develop and implement programming that fosters a strong sense of community among house residents</li>
+                        <li>Facilitate resident involvement in house life and create an environment that enhances personal and academic success</li>
                     </ul>
                 </div>
             </section>
