@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lauren VanNette | About Me</title>
+    <title>Lauren VanNette</title>
     <style>
         * {
             margin: 0;
@@ -17,13 +17,71 @@
             color: #2c3e50;
             background: linear-gradient(135deg, #89CFF0 0%, #B4D7E8 100%);
             min-height: 100vh;
-            padding: 20px;
             overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(93, 173, 226, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a.active::after {
+            width: 100%;
         }
 
         .container {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -40,6 +98,14 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
 
         header {
@@ -88,6 +154,13 @@
             z-index: 1;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .photo-placeholder:hover {
@@ -156,7 +229,6 @@
         section {
             margin-bottom: 40px;
             animation: fadeInUp 0.6s ease-out both;
-            animation-delay: calc(var(--section-index) * 0.1s);
         }
 
         @keyframes fadeInUp {
@@ -169,14 +241,6 @@
                 transform: translateY(0);
             }
         }
-
-        section:nth-child(1) { --section-index: 1; }
-        section:nth-child(2) { --section-index: 2; }
-        section:nth-child(3) { --section-index: 3; }
-        section:nth-child(4) { --section-index: 4; }
-        section:nth-child(5) { --section-index: 5; }
-        section:nth-child(6) { --section-index: 6; }
-        section:nth-child(7) { --section-index: 7; }
 
         h2 {
             color: #3498DB;
@@ -376,6 +440,220 @@
             transition: color 0.3s ease;
         }
 
+        .hero-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
+        }
+
+        .hero-section h2 {
+            border: none;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h2:hover {
+            transform: none;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            color: #5f6368;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(93, 173, 226, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(93, 173, 226, 0.4);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .image-card-content {
+            padding: 15px;
+            background: white;
+        }
+
+        .image-card-content h3 {
+            color: #3498DB;
+            margin-bottom: 8px;
+        }
+
+        .image-card-content p {
+            color: #5f6368;
+            font-size: 0.9em;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #EBF5FB;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid #3498DB;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+        }
+
+        .project-card:hover h3,
+        .project-card:hover p {
+            color: white;
+        }
+
+        .project-card h3 {
+            color: #3498DB;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-card p {
+            color: #5f6368;
+            transition: color 0.3s ease;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #D6EAF8;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #5DADE2;
+            box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(93, 173, 226, 0.3);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(93, 173, 226, 0.4);
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 20px;
+            background: #EBF5FB;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            transform: translateY(-5px);
+        }
+
+        .contact-method:hover h3,
+        .contact-method:hover p,
+        .contact-method:hover a {
+            color: white;
+        }
+
+        .contact-method h3 {
+            color: #3498DB;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-method p,
+        .contact-method a {
+            color: #5f6368;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
         footer {
             background: #f5f7fa;
             text-align: center;
@@ -444,6 +722,15 @@
                 transform: translateY(-20px) translateX(20px);
             }
         }
+
+        .team-photo {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -453,123 +740,197 @@
         <div class="shape"></div>
     </div>
 
-    <div class="container">
-        <header>
-            <div class="photo-placeholder">Your Photo Here</div>
-            <h1>Lauren VanNette</h1>
-            <div class="contact-info">
-                (814) 602-6643 | <a href="mailto:lvannette18@gmail.com">lvannette18@gmail.com</a><br>
-                <a href="https://linkedin.com/in/lauren-vannette-693a76374" target="_blank">linkedin.com/in/lauren-vannette-693a76374</a>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
+            <li><a href="#" onclick="showPage('about')" class="nav-link">About Me</a></li>
+            <li><a href="#" onclick="showPage('projects')" class="nav-link">Projects</a></li>
+            <li><a href="#" onclick="showPage('contact')" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="container">
+            <header>
+                <div class="photo-placeholder">Your Photo Here</div>
+                <h1>Lauren VanNette</h1>
+                <div class="contact-info">
+                    Mathematical Sciences Student | Resident Assistant | Leader
+                </div>
+            </header>
+
+            <div class="hero-section">
+                <h2>Welcome!</h2>
+                <p>I'm a Carnegie Mellon University student passionate about mathematics, programming, and building community. Explore my journey through academics, leadership, and creative projects.</p>
+                <a href="#" onclick="showPage('about')" class="cta-button">Learn More About Me</a>
             </div>
-        </header>
 
-        <div class="content">
-            <section>
-                <h2>About Me</h2>
-                <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a focus on Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests span discrete mathematics, financial mathematics, and computer science, and I'm always eager to learn and take on new challenges.</p>
-            </section>
-
-            <section>
-                <h2>Education</h2>
-                <div class="education-item">
-                    <div class="item-header">
-                        <span class="item-title">Carnegie Mellon University</span>
-                        <span class="item-date">Expected May 2028</span>
+            <div class="content">
+                <section>
+                    <h2>Quick Highlights</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>🎓 Student</h3>
+                            <p>Mathematical Sciences at CMU<br>GPA: 3.70/4.00</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>🏠 Leader</h3>
+                            <p>Resident Assistant<br>Community Advisor</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>💻 Programmer</h3>
+                            <p>Python, LaTeX<br>Computer Science</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>🌟 Achiever</h3>
+                            <p>Dean's List<br>2024-2025</p>
+                        </div>
                     </div>
-                    <div class="item-subtitle">Bachelor of Science in Mathematical Sciences (Discrete Mathematics and Logic)</div>
-                    <div class="item-subtitle">Current GPA: 3.70/4.00 | Pittsburgh, PA</div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Work Experience (Current and Upcoming)</h2>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <span class="item-title">Resident Assistant - Carnegie Mellon Residential Education</span>
-                        <span class="item-date">August 2025 - Present</span>
-                    </div>
-                    <div class="item-subtitle">Pittsburgh, PA</div>
-                    <ul>
-                        <li>Organize community-building events for a floor of 30 residents and contribute to planning such events for a building of 300 residents</li>
-                        <li>Ensure rules and standards are upheld by completing scheduled building rounds and 12-hour on-call shifts</li>
-                        <li>Connect residents to relevant resources and assist in resolving resident conflicts</li>
-                        <li>Attend weekly team meetings</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <span class="item-title">Community Advisor - Carnegie Mellon Residential Education</span>
-                        <span class="item-date">Starting August 2026</span>
-                    </div>
-                    <div class="item-subtitle">Pittsburgh, PA</div>
-                    <ul>
-                        <li>Provide leadership, vision, and direction for daily activities in a residential house community</li>
-                        <li>Lead and supervise a team of Resident Assistants to support residents and maintain community standards</li>
-                        <li>Develop and implement programming that fosters a strong sense of community among house residents</li>
-                        <li>Facilitate resident involvement in house life and create an environment that enhances personal and academic success</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>Leadership</h2>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <span class="item-title">Secretary & RA Liaison - Dorm House Council</span>
-                        <span class="item-date">2024 - Present</span>
-                    </div>
-                    <div class="item-subtitle">Pittsburgh, PA</div>
-                    <ul>
-                        <li>Assist in organizing events for a building of over 300 residents</li>
-                        <li>Provide insight on logistics regarding residents' planned events and activities</li>
-                        <li>Take detailed notes at weekly meetings and send calendar invites to all members</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>Relevant Coursework</h2>
-                <div class="item-subtitle" style="margin-top: 10px;">
-                    <strong>Mathematics:</strong> Discrete Mathematics, Concepts of Mathematics<br>
-                    <strong>Programming:</strong> Principles of Computing, Fundamentals of Programming and Computer Science (Python)<br>
-                    <strong>Finance:</strong> Introduction to Mathematical Finance, Introduction to Accounting, Principles of Microeconomics
-                </div>
-            </section>
-
-            <section>
-                <h2>Skills & Interests</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming</h3>
-                        <p>Python</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <p>LaTeX, Microsoft Office</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <p>English (Native)<br>German (Conversational)</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Interests</h3>
-                        <p>Discrete Mathematics, Financial Mathematics, Computer Science</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Awards & Recognition</h2>
-                <div class="awards">
-                    <h3>Dean's List</h3>
-                    <p>2024–2025 Academic Year</p>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-
-        <footer>
-            <p>Layout and wording generated with Claude Sonnet 4.5</p>
-        </footer>
     </div>
-</body>
-</html>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="container">
+            <header>
+                <div class="photo-placeholder">Your Photo Here</div>
+                <h1>About Lauren</h1>
+                <div class="contact-info">
+                    (814) 602-6643 | <a href="mailto:lvannette18@gmail.com">lvannette18@gmail.com</a><br>
+                    <a href="https://linkedin.com/in/lauren-vannette-693a76374" target="_blank">LinkedIn Profile</a>
+                </div>
+            </header>
+
+            <div class="content">
+                <section>
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a focus on Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests span discrete mathematics, financial mathematics, and computer science, and I'm always eager to learn and take on new challenges.</p>
+                </section>
+
+                <section>
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">Carnegie Mellon University</span>
+                            <span class="item-date">Expected May 2028</span>
+                        </div>
+                        <div class="item-subtitle">Bachelor of Science in Mathematical Sciences (Discrete Mathematics and Logic)</div>
+                        <div class="item-subtitle">Current GPA: 3.70/4.00 | Pittsburgh, PA</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>My RA Team</h2>
+                    <img src="https://i.imgur.com/your-uploaded-image.jpg" alt="RA Team Photo" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; text-align:center; padding:40px; background:#EBF5FB; border-radius:10px; margin:20px auto; max-width:700px;">
+                        <p style="color:#5f6368;">📸 Your RA team photo will appear here once uploaded</p>
+                    </div>
+                    <p style="text-align:center; color:#5f6368; margin-top:10px;">My amazing RA team at Carnegie Mellon - passionate about building community!</p>
+                </section>
+
+                <section>
+                    <h2>Work Experience</h2>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">Resident Assistant - Carnegie Mellon Residential Education</span>
+                            <span class="item-date">August 2025 - Present</span>
+                        </div>
+                        <div class="item-subtitle">Pittsburgh, PA</div>
+                        <ul>
+                            <li>Organize community-building events for a floor of 30 residents and contribute to planning such events for a building of 300 residents</li>
+                            <li>Ensure rules and standards are upheld by completing scheduled building rounds and 12-hour on-call shifts</li>
+                            <li>Connect residents to relevant resources and assist in resolving resident conflicts</li>
+                            <li>Attend weekly team meetings</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">Community Advisor - Carnegie Mellon Residential Education</span>
+                            <span class="item-date">Starting August 2026</span>
+                        </div>
+                        <div class="item-subtitle">Pittsburgh, PA</div>
+                        <ul>
+                            <li>Provide leadership, vision, and direction for daily activities in a residential house community</li>
+                            <li>Lead and supervise a team of Resident Assistants to support residents and maintain community standards</li>
+                            <li>Develop and implement programming that fosters a strong sense of community among house residents</li>
+                            <li>Facilitate resident involvement in house life and create an environment that enhances personal and academic success</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Leadership</h2>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">Secretary & RA Liaison - Dorm House Council</span>
+                            <span class="item-date">2024 - Present</span>
+                        </div>
+                        <div class="item-subtitle">Pittsburgh, PA</div>
+                        <ul>
+                            <li>Assist in organizing events for a building of over 300 residents</li>
+                            <li>Provide insight on logistics regarding residents' planned events and activities</li>
+                            <li>Take detailed notes at weekly meetings and send calendar invites to all members</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Skills & Interests</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Programming</h3>
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <p>LaTeX, Microsoft Office</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Languages</h3>
+                            <p>English (Native)<br>German (Conversational)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Interests</h3>
+                            <p>Discrete Mathematics, Financial Mathematics, Computer Science</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Awards & Recognition</h2>
+                    <div class="awards">
+                        <h3>Dean's List</h3>
+                        <p>2024–2025 Academic Year</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projects" class="page">
+        <div class="container">
+            <header>
+                <h1>My Projects</h1>
+                <div class="contact-info">
+                    Academic Work | Leadership | Creative Endeavors
+                </div>
+            </header>
+
+            <div class="content">
+                <section>
+                    <h2>Featured Projects</h2>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h3>📊 Mathematical Research</h3>
+                            <p>Exploring discrete mathematics and logic through coursework projects. Focus areas include graph theory, combinatorics, and formal proof techniques.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>💻 Python Programming</h3>
+                            <p>Building computational solutions and data analysis tools using Python. Projects include algorithms implementation and problem-solving applications.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>🏠 Community
