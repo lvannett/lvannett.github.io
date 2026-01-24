@@ -52,7 +52,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #89CFF0 0%, #B4D7E8 100%);
+            background: linear-gradient(135deg, #89CFF0 0%, #B4D7E8 50%, #A8DADC 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -91,6 +93,8 @@
 
         nav a:hover {
             background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         nav a.active {
@@ -98,8 +102,8 @@
         }
 
         .container {
-            max-width: 900px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 10px auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -192,6 +196,7 @@
             position: relative;
             z-index: 1;
             animation: slideDown 0.6s ease-out 0.2s both;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes slideDown {
@@ -242,7 +247,7 @@
         }
 
         .content {
-            padding: 40px;
+            padding: 30px;
         }
 
         section {
@@ -269,6 +274,7 @@
             border-bottom: 3px solid #5DADE2;
             position: relative;
             transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         h2::before {
@@ -419,24 +425,6 @@
             border-left: 4px solid #3498DB;
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .awards::before {
-            content: '🌟';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2em;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .awards:hover::before {
-            opacity: 1;
-            transform: translateY(-50%) rotate(360deg);
         }
 
         .awards:hover {
@@ -624,63 +612,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #D6EAF8;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #5DADE2;
-            box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(93, 173, 226, 0.3);
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(93, 173, 226, 0.4);
-        }
-
         .contact-methods {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -733,59 +664,25 @@
             background: #e8ecf4;
         }
 
-        .floating-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            left: 80%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            top: 80%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-20px) translateX(20px);
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
             }
             50% {
-                transform: translateY(-40px) translateX(-20px);
+                background-position: 100% 50%;
             }
-            75% {
-                transform: translateY(-20px) translateX(20px);
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
             }
         }
 
@@ -797,15 +694,91 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             display: block;
         }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav a {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+
+            .container {
+                margin: 10px auto;
+                padding: 20px;
+            }
+
+            .project-demo iframe {
+                width: 100%;
+                height: 300px;
+            }
+
+            .education-item, .experience-item {
+                padding: 15px;
+            }
+
+            .item-title {
+                font-size: 1em;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-method {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .photo-placeholder {
+                width: 120px;
+                height: 120px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                padding: 10px 15px;
+            }
+
+            .project-demo iframe {
+                height: 250px;
+            }
+
+            .education-item, .experience-item {
+                padding: 12px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .item-date {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-
     <nav>
         <ul>
             <li><a href="#" onclick="showPage('home', event)" class="nav-link active">Home</a></li>
@@ -847,10 +820,6 @@
                         <div class="skill-category">
                             <h3>💻 Programmer</h3>
                             <p>Python, LaTeX<br>Computer Science</p>
-                        </div>
-                        <div class="skill-category">
-                            <h3>🌟 Achiever</h3>
-                            <p>Dean's List<br>2024-2025</p>
                         </div>
                     </div>
                 </section>
@@ -992,7 +961,7 @@
             <header>
                 <h1>My Projects</h1>
                 <div class="contact-info">
-                    Academic Work | Leadership | Creative Endeavors
+                    A showcase of my programming and creative work.
                 </div>
             </header>
 
@@ -1043,29 +1012,6 @@
                         </div>
                     </div>
                 </section>
-
-                <section>
-                    <h2>Send Me a Message</h2>
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </section>
             </div>
         </div>
     </div>
@@ -1093,12 +1039,6 @@
             event.target.classList.add('active');
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! This is a demo form. In a live website, this would send your message to Lauren.');
-            event.target.reset();
         }
     </script>
 </body>
