@@ -20,11 +20,32 @@
             -webkit-tap-highlight-color: transparent;
             outline: none;
             border: none;
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
         }
 
-        nav a:focus {
-            outline: none;
-            border: none;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active::after {
+            width: 100%;
         }
 
         body {
@@ -277,7 +298,7 @@
             background: transparent;
         }
 
-        .education-item:hover, .experience-item:hover {
+        .education-item:hover, .experience-item:hover, .education-item:focus, .experience-item:focus {
             background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
             transform: translateX(10px);
             box-shadow: -5px 0 15px rgba(93, 173, 226, 0.15);
@@ -299,7 +320,9 @@
         }
 
         .education-item:hover .item-title,
-        .experience-item:hover .item-title {
+        .experience-item:hover .item-title,
+        .education-item:focus .item-title,
+        .experience-item:focus .item-title {
             color: #3498DB;
         }
 
@@ -319,22 +342,22 @@
             list-style-position: outside;
         }
 
-        li {
+        .content li {
             margin-bottom: 8px;
             transition: all 0.2s ease;
             position: relative;
         }
 
-        li:hover {
+        .content li:hover {
             color: #2c3e50;
             transform: translateX(5px);
         }
 
-        li::marker {
+        .content li::marker {
             color: #5f6368;
         }
 
-        li::after {
+        .content li::after {
             content: '';
             position: absolute;
             left: -25px;
@@ -345,7 +368,7 @@
             transition: width 0.3s ease;
         }
 
-        li:hover::after {
+        .content li:hover::after {
             width: 15px;
         }
 
@@ -554,6 +577,51 @@
         .project-card p {
             color: #5f6368;
             transition: color 0.3s ease;
+        }
+
+        .project-item {
+            background: #EBF5FB;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid #3498DB;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+        }
+
+        .project-item:hover h3,
+        .project-item:hover p {
+            color: white;
+        }
+
+        .project-item h3 {
+            color: #3498DB;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-item p {
+            color: #5f6368;
+            transition: color 0.3s ease;
+        }
+
+        .project-demo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .project-demo iframe {
+            width: 410px;
+            height: 460px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .contact-form {
@@ -769,16 +837,20 @@
                     <h2>Quick Highlights</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h3>🎓 Academics</h3>
-                            <p>Mathematical Sciences at CMU<br>GPA: 3.70/4.00</p>
+                            <h3>🎓 Student</h3>
+                            <p>Mathematical Sciences at CMU<br>GPA: 3.69/4.00</p>
                         </div>
                         <div class="skill-category">
-                            <h3>🏠 Employment</h3>
+                            <h3>🏠 Leader</h3>
                             <p>Resident Assistant<br>Community Advisor</p>
                         </div>
                         <div class="skill-category">
-                            <h3>💻 Skills</h3>
+                            <h3>💻 Programmer</h3>
                             <p>Python, LaTeX<br>Computer Science</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>🌟 Achiever</h3>
+                            <p>Dean's List<br>2024-2025</p>
                         </div>
                     </div>
                 </section>
@@ -793,7 +865,7 @@
                 <div class="photo-placeholder">Your Photo Here</div>
                 <h1>About Lauren</h1>
                 <div class="contact-info">
-                    (814) 602-6643 | <a href="mailto:lvannette18@gmail.com">lvannette18@gmail.com</a><br>
+                    (814) 602-6643 | <a href="mailto:lvannette18@gmail.com?subject=Contact from Website">lvannette18@gmail.com</a><br>
                     <a href="https://linkedin.com/in/lauren-vannette-693a76374" target="_blank">LinkedIn Profile</a>
                 </div>
             </header>
@@ -801,7 +873,7 @@
             <div class="content">
                 <section>
                     <h2>About Me</h2>
-                    <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a concentration in Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests include discrete and financial mathematics and computer science, and I'm always eager to learn and take on new challenges.</p>
+                    <p>Hello! I'm Lauren, a student at Carnegie Mellon University studying Mathematical Sciences with a focus on Discrete Mathematics and Logic. I'm passionate about mathematics, programming, and building community. As a Resident Assistant, I work to create a welcoming and supportive environment for my fellow students. My interests span discrete mathematics, financial mathematics, and computer science, and I'm always eager to learn and take on new challenges.</p>
                 </section>
 
                 <section>
@@ -812,7 +884,17 @@
                             <span class="item-date">Expected May 2028</span>
                         </div>
                         <div class="item-subtitle">Bachelor of Science in Mathematical Sciences (Discrete Mathematics and Logic)</div>
-                        <div class="item-subtitle">Current QPA: 3.69/4.00 | Pittsburgh, PA</div>
+                        <div class="item-subtitle">Current GPA: 3.69/4.00 | Pittsburgh, PA</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">Coursework Highlights</span>
+                        </div>
+                        <div class="item-subtitle" style="margin-top: 10px; line-height: 1.8;">
+                            <strong>Mathematics:</strong> Discrete Mathematics, Concepts of Mathematics<br>
+                            <strong>Programming:</strong> Principles of Computing, Fundamentals of Programming and Computer Science (Python)<br>
+                            <strong>Finance:</strong> Introduction to Mathematical Finance, Introduction to Accounting, Principles of Microeconomics
+                        </div>
                     </div>
                 </section>
 
@@ -917,47 +999,16 @@
             <div class="content">
                 <section>
                     <h2>Featured Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h3>German - English Interactive Dictionary</h3>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div>
-                                    <p>This is an interactive German - English Dictionary I made in my Fundamentals of Programming class. Select a location and hover over items to see their translation! You can also build a sentence using the options at the bottom of the screen. Press the '?' button for more information!</p>
-                                </div>
-                                <div>
-                                    <iframe src="https://academy.cs.cmu.edu/sharing/grayFox193177" width="400" height="400" frameborder="0"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <h3>💻 Python Programming</h3>
-                            <p>Building computational solutions and data analysis tools using Python. Projects include algorithms implementation and problem-solving applications.</p>
-                        </div>
-                        <div class="project-card">
-                            <h3>🏠 Community Building</h3>
-                            <p>Organizing events and programs for 300+ residents as RA. Creating inclusive environments that foster connection, growth, and academic success.</p>
-                        </div>
-                        <div class="project-card">
-                            <h3>📈 Financial Analysis</h3>
-                            <p>Applying mathematical concepts to financial modeling and analysis through coursework in mathematical finance, accounting, and microeconomics.</p>
-                        </div>
-                        <div class="project-card">
-                            <h3>✍️ Academic Writing</h3>
-                            <p>Creating technical documentation and reports using LaTeX. Developing clear communication of complex mathematical and computational concepts.</p>
-                        </div>
-                        <div class="project-card">
-                            <h3>🌐 Personal Website</h3>
-                            <p>This website! Built to showcase my academic journey, leadership experience, and projects. Featuring interactive design and responsive layout.</p>
-                        </div>
+                    <div class="project-item">
+                        <h3>Interactive English - German Dictionary</h3>
+                        <p>This is an interactive German - English Dictionary I made in my Fundamentals of Programming class. Select a location and hover over items to see their translation! You can also build a sentence using the options at the bottom of the screen. Press the '?' button for more information!</p>
                     </div>
-                </section>
-
-                <section>
-                    <h2>Coursework Highlights</h2>
-                    <div class="item-subtitle" style="margin-top: 10px; line-height: 1.8;">
-                        <strong>Mathematics:</strong> Discrete Mathematics, Concepts of Mathematics<br>
-                        <strong>Programming:</strong> Principles of Computing, Fundamentals of Programming and Computer Science (Python)<br>
-                        <strong>Finance:</strong> Introduction to Mathematical Finance, Introduction to Accounting, Principles of Microeconomics
+                    <div class="project-demo">
+                        <iframe width="410" height="460" src="https://academy.cs.cmu.edu/sharing/grayFox193177/embed"></iframe>
+                    </div>
+                    <div class="project-item">
+                        <h3>This Website</h3>
+                        <p>Unlike my previous project where I developed everything from scratch without AI assistance, I purposefully incorporated AI tools in creating this website to explore and test the effectiveness of AI in programming. This approach allowed me to experiment with AI-assisted development while maintaining creative control over the design and functionality.</p>
                     </div>
                 </section>
             </div>
@@ -980,7 +1031,7 @@
                     <div class="contact-methods">
                         <div class="contact-method">
                             <h3>📧 Email</h3>
-                            <a href="mailto:lvannette18@gmail.com">lvannette18@gmail.com</a>
+                            <a href="mailto:lvannette18@gmail.com?subject=Contact from Website">lvannette18@gmail.com</a>
                         </div>
                         <div class="contact-method">
                             <h3>📱 Phone</h3>
