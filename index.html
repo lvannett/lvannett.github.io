@@ -12,7 +12,7 @@
         }
 
         *::selection {
-            background: rgba(93, 173, 226, 0.3);
+            background: rgba(0, 48, 73, 0.3);
             color: inherit;
         }
 
@@ -51,8 +51,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #89CFF0 0%, #B4D7E8 50%, #A8DADC 100%);
+            color: #003049;
+            background: linear-gradient(135deg, #D7E8EF 0%, #C5DFE9 50%, #E6F0F4 100%);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             min-height: 100vh;
@@ -60,7 +60,7 @@
         }
 
         nav {
-            background: rgba(93, 173, 226, 0.95);
+            background: rgba(0, 48, 73, 0.95);
             backdrop-filter: blur(10px);
             padding: 0;
             position: sticky;
@@ -131,7 +131,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -267,11 +267,11 @@
         }
 
         h2 {
-            color: #3498DB;
+            color: #3F7892;
             font-size: 1.8em;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #5DADE2;
+            border-bottom: 3px solid #6A9DB3;
             position: relative;
             transition: all 0.3s ease;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -284,7 +284,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, #5DADE2, #85C1E9);
+            background: linear-gradient(90deg, #6A9DB3, #3F7892);
             transition: width 0.4s ease;
         }
 
@@ -304,10 +304,16 @@
             background: transparent;
         }
 
+        .experience-group-title {
+            color: #3F7892;
+            font-size: 1.2em;
+            margin: 0 0 10px 20px;
+        }
+
         .education-item:hover, .experience-item:hover, .education-item:focus, .experience-item:focus {
-            background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
+            background: linear-gradient(135deg, #EDF5F8 0%, #DCEBF1 100%);
             transform: translateX(10px);
-            box-shadow: -5px 0 15px rgba(93, 173, 226, 0.15);
+            box-shadow: -5px 0 15px rgba(0, 48, 73, 0.15);
         }
 
         .item-header {
@@ -320,7 +326,7 @@
 
         .item-title {
             font-weight: bold;
-            color: #2c3e50;
+            color: #003049;
             font-size: 1.15em;
             transition: color 0.3s ease;
         }
@@ -329,22 +335,22 @@
         .experience-item:hover .item-title,
         .education-item:focus .item-title,
         .experience-item:focus .item-title {
-            color: #3498DB;
+            color: #3F7892;
         }
 
         .item-date {
-            color: #5DADE2;
+            color: #6A9DB3;
             font-style: italic;
         }
 
         .item-subtitle {
-            color: #5f6368;
+            color: #53636B;
             margin-bottom: 8px;
         }
 
         ul {
             margin-left: 20px;
-            color: #5f6368;
+            color: #53636B;
             list-style-position: outside;
         }
 
@@ -355,12 +361,12 @@
         }
 
         .content li:hover {
-            color: #2c3e50;
+            color: #003049;
             transform: translateX(5px);
         }
 
         .content li::marker {
-            color: #5f6368;
+            color: #53636B;
         }
 
         .content li::after {
@@ -370,7 +376,7 @@
             bottom: 0;
             width: 0;
             height: 2px;
-            background: #3498DB;
+            background: #3F7892;
             transition: width 0.3s ease;
         }
 
@@ -386,18 +392,18 @@
         }
 
         .skill-category {
-            background: #EBF5FB;
+            background: #EDF5F8;
             padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #3498DB;
+            border-left: 4px solid #3F7892;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .skill-category:hover {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 48, 73, 0.3);
         }
 
         .skill-category:hover h3,
@@ -406,31 +412,31 @@
         }
 
         .skill-category h3 {
-            color: #3498DB;
+            color: #3F7892;
             font-size: 1em;
             margin-bottom: 8px;
             transition: color 0.3s ease;
         }
 
         .skill-category p {
-            color: #5f6368;
+            color: #53636B;
             font-size: 0.95em;
             transition: color 0.3s ease;
         }
 
         .awards {
-            background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
+            background: linear-gradient(135deg, #EDF5F8 0%, #DCEBF1 100%);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #3498DB;
+            border-left: 4px solid #3F7892;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .awards:hover {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 48, 73, 0.3);
         }
 
         .awards:hover h3,
@@ -439,20 +445,20 @@
         }
 
         .awards h3 {
-            color: #3498DB;
+            color: #3F7892;
             margin-bottom: 10px;
             transition: color 0.3s ease;
         }
 
         .awards p {
-            color: #5f6368;
+            color: #53636B;
             transition: color 0.3s ease;
         }
 
         .hero-section {
             text-align: center;
             padding: 60px 40px;
-            background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 100%);
+            background: linear-gradient(135deg, #EDF5F8 0%, #DCEBF1 100%);
         }
 
         .hero-section h2 {
@@ -467,7 +473,7 @@
 
         .hero-section p {
             font-size: 1.2em;
-            color: #5f6368;
+            color: #53636B;
             max-width: 700px;
             margin: 0 auto 30px;
         }
@@ -475,18 +481,18 @@
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 48, 73, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(93, 173, 226, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 48, 73, 0.4);
         }
 
         .image-gallery {
@@ -505,7 +511,7 @@
 
         .image-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 48, 73, 0.3);
         }
 
         .image-card img {
@@ -520,12 +526,12 @@
         }
 
         .image-card-content h3 {
-            color: #3498DB;
+            color: #3F7892;
             margin-bottom: 8px;
         }
 
         .image-card-content p {
-            color: #5f6368;
+            color: #53636B;
             font-size: 0.9em;
         }
 
@@ -537,18 +543,18 @@
         }
 
         .project-card {
-            background: #EBF5FB;
+            background: #EDF5F8;
             border-radius: 10px;
             padding: 25px;
-            border-left: 4px solid #3498DB;
+            border-left: 4px solid #3F7892;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .project-card:hover {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 48, 73, 0.3);
         }
 
         .project-card:hover h3,
@@ -557,29 +563,29 @@
         }
 
         .project-card h3 {
-            color: #3498DB;
+            color: #3F7892;
             margin-bottom: 10px;
             transition: color 0.3s ease;
         }
 
         .project-card p {
-            color: #5f6368;
+            color: #53636B;
             transition: color 0.3s ease;
         }
 
         .project-item {
-            background: #EBF5FB;
+            background: #EDF5F8;
             border-radius: 10px;
             padding: 25px;
-            border-left: 4px solid #3498DB;
+            border-left: 4px solid #3F7892;
             margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
         .project-item:hover {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 48, 73, 0.3);
         }
 
         .project-item:hover h3,
@@ -588,13 +594,13 @@
         }
 
         .project-item h3 {
-            color: #3498DB;
+            color: #3F7892;
             margin-bottom: 10px;
             transition: color 0.3s ease;
         }
 
         .project-item p {
-            color: #5f6368;
+            color: #53636B;
             transition: color 0.3s ease;
         }
 
@@ -622,7 +628,7 @@
         .contact-method {
             text-align: center;
             padding: 20px;
-            background: #EBF5FB;
+            background: #EDF5F8;
             border-radius: 10px;
             transition: all 0.3s ease;
         }
@@ -634,7 +640,7 @@
         }
 
         .contact-method:hover {
-            background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+            background: linear-gradient(135deg, #6A9DB3 0%, #3F7892 100%);
             transform: translateY(-5px);
         }
 
@@ -645,29 +651,29 @@
         }
 
         .contact-method h3 {
-            color: #3498DB;
+            color: #3F7892;
             margin-bottom: 10px;
             font-size: 1.2em;
         }
 
         .contact-method p,
         .contact-method a {
-            color: #5f6368;
+            color: #53636B;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer {
-            background: #f5f7fa;
+            background: #F4F8FA;
             text-align: center;
             padding: 20px;
-            color: #5f6368;
+            color: #53636B;
             font-size: 0.9em;
             transition: all 0.3s ease;
         }
 
         footer:hover {
-            background: #e8ecf4;
+            background: #E9F1F4;
         }
 
         @keyframes gradientShift {
@@ -690,7 +696,7 @@
             100% {
                 background-position: 0% 50%;
             }
-        }
+        
 
         .team-photo {
             width: 100%;
@@ -708,10 +714,12 @@
             border: 5px solid white;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             object-fit: cover;
-            object-position: 5% 15%;
+            object-position: 40% 15%;
             display: block;
             margin: 0 auto 20px;
+            transform: scale(1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-view-box: inset(25%);
             cursor: pointer;
         }
 
@@ -817,10 +825,10 @@
     <div id="home" class="page active">
         <div class="container">
             <header>
-                <img src="goodpicofme.PNG" alt="A picture of me!" class="profile-pic">   
+                <img src="laurenpicture.jpeg" alt="A picture of me!" class="profile-pic">   
                 <h1>Lauren VanNette</h1>
                 <div class="contact-info">
-                    Mathematical Sciences Student | Resident Assistant
+                    Mathematical Sciences Student | Community Advisor
                 </div>
             </header>
 
@@ -836,15 +844,15 @@
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h3>🎓 Student</h3>
-                            <p>Mathematical Sciences at CMU<br>GPA: 3.69/4.00</p>
+                            <p>Discrete Mathematics and Logic at CMU<br>GPA: 3.50/4.00</p>
                         </div>
                         <div class="skill-category">
                             <h3>🏠 Leader</h3>
-                            <p>Resident Assistant<br>Community Advisor</p>
+                            <p>Community Advisor<br>Resident Assistant</p>
                         </div>
                         <div class="skill-category">
                             <h3>💻 Programmer</h3>
-                            <p>Python, LaTeX<br>Computer Science</p>
+                            <p>Python, C0/C, Standard ML, LaTeX</p>
                         </div>
                     </div>
                 </section>
@@ -856,7 +864,7 @@
     <div id="about" class="page">
         <div class="container">
             <header>
-                <img src="goodpicofme.PNG" alt="A picture of me!" class="profile-pic">
+                <img src="laurenpicture.jpeg" alt="The view from Arthur's Seat- the highest point in Edinburgh, Scotland" class="profile-pic">
                 <h1>About Lauren</h1>
             </header>
 
@@ -874,61 +882,77 @@
                             <span class="item-date">Expected May 2028</span>
                         </div>
                         <div class="item-subtitle">Bachelor of Science in Mathematical Sciences (Discrete Mathematics and Logic)</div>
-                        <div class="item-subtitle">Current GPA: 3.69/4.00 | Pittsburgh, PA</div>
+                        <div class="item-subtitle">Current GPA: 3.50/4.00 | Pittsburgh, PA</div>
                     </div>
                     <div class="education-item">
                         <div class="item-header">
                             <span class="item-title">Coursework Highlights</span>
                         </div>
                         <div class="item-subtitle" style="margin-top: 10px; line-height: 1.8;">
-                            <strong>Mathematics:</strong> Discrete Mathematics, Concepts of Mathematics<br>
-                            <strong>Programming:</strong> Principles of Computing, Fundamentals of Programming and Computer Science (Python)<br>
-                            <strong>Finance:</strong> Introduction to Mathematical Finance, Introduction to Accounting, Principles of Microeconomics
+                            <strong>Mathematics:</strong> Basic Logic, Combinatorics, Probability, Discrete Mathematics <br>
+                            <strong>Programming:</strong> Functional Programming (SML), Principles of Imperative Computation (C0, C), Fundamentals of Programming and Computer Science (Python)<br>
+                            <strong>Finance:</strong> Discrete Time Finance, Mathematics of Fixed Income Markets, Principles of Microeconomics, Introduction to Mathematical Finance
                         </div>
                     </div>
                 </section>
 
                 <section>
                     <h2>My RA Team</h2>
-                    <img src="https://i.imgur.com/your-uploaded-image.jpg" alt="RA Team Photo" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; text-align:center; padding:40px; background:#EBF5FB; border-radius:10px; margin:20px auto; max-width:700px;">
-                        <img src="IMG_0875.jpg" alt="A picture of my RA team!" style="max-width: 100%; height: auto; object-fit: cover; object-position: center;">
+                    <div style="text-align:center; padding:20px; background:#EDF5F8; border-radius:5px; margin:5px auto; max-width:600px;">
+                        <img src="teamatbowling.jpeg" alt="A picture of my RA team!" class="team-photo" style="max-width: 100%; height: auto; object-fit: cover; object-position: center;">
                     </div>
-                    <p style="text-align:center; color:#5f6368; margin-top:10px;">My amazing RA team at Carnegie Mellon - passionate about building community!</p>
+                    <p style="text-align:center; color:#53636B; margin-top:10px;">My amazing RA team at Carnegie Mellon - passionate about building community!</p>
                 </section>
 
                 <section>
                     <h2>Work Experience</h2>
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <span class="item-title">Resident Assistant - Carnegie Mellon Residential Education</span>
-                            <span class="item-date">August 2025 - Present</span>
+                    <div class="experience-group">
+                        <h3 class="experience-group-title">Carnegie Mellon Residential Education</h3>
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">Community Advisor</span>
+                                <span class="item-date">July 2026 - Present</span>
+                            </div>
+                            <div class="item-subtitle">Pittsburgh, PA</div>
+                            <ul>
+                                <li>Design and lead community-wide events for Mudge House, a residence hall of around 300 first-year students.</li>
+                                <li>Uphold university policies and community standards by working 12-hour on-call shifts or being available for on-call staff, responding to emergencies and de-escalating incidents as needed.</li>
+                                <li>Act as a peer mentor and first point of contact for 10 Resident Assistants, advising in best practices for resolving conflicts, connecting students to resources, and maintaining professional boundaries.</li>
+                                <li>Serve as a mentor for Mudge House Council, a group of residents elected as community representatives, as they create intentional programming for other residents as well as develop personal leadership skills.</li>
+                            </ul>
                         </div>
-                        <div class="item-subtitle">Pittsburgh, PA</div>
-                        <ul>
-                            <li>Organize community-building events for a floor of 30 residents and contribute to planning such events for a building of 300 residents</li>
-                            <li>Ensure rules and standards are upheld by completing scheduled building rounds and 12-hour on-call shifts</li>
-                            <li>Connect residents to relevant resources and assist in resolving resident conflicts</li>
-                            <li>Attend weekly team meetings</li>
-                        </ul>
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">Resident Assistant</span>
+                                <span class="item-date">August 2025 - May 2026</span>
+                            </div>
+                            <div class="item-subtitle">Pittsburgh, PA</div>
+                            <ul>
+                                <li>Organized community-building events for a floor of 30 residents and contributed to planning such events for Mudge House, a building of 300 residents.</li>
+                                <li>Ensured rules and standards were followed by completing scheduled building rounds and 12-hour on-call shifts.</li>
+                                <li>Connected residents to relevant resources and assisted in resolving resident conflicts.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <span class="item-title">Community Advisor - Carnegie Mellon Residential Education</span>
-                            <span class="item-date">Starting August 2026</span>
+                    <div class="experience-group">
+                        <h3 class="experience-group-title">Pennsylvania Governor's School for the Sciences</h3>
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">Mathematics Teaching Assistant and Counselor</span>
+                                <span class="item-date">June 2026 - July 2026</span>
+                            </div>
+                            <div class="item-subtitle">Pittsburgh, PA</div>
+                            <ul>
+                                <li>Held homework help and tutoring sessions for a group of 72 students, as well as provided feedback on students' assignments for the program's Discrete Mathematics and Mathematical Finance courses.</li>
+                                <li>Organized and facilitated trips and evening activities for students throughout the 5-week program.</li>
+                                <li>Maintained program standards and policies including course attendance, academic integrity, and general safety.</li>
+                            </ul>
                         </div>
-                        <div class="item-subtitle">Pittsburgh, PA</div>
-                        <ul>
-                            <li>Provide leadership, vision, and direction for daily activities in a residential house community</li>
-                            <li>Lead and supervise a team of Resident Assistants to support residents and maintain community standards</li>
-                            <li>Develop and implement programming that fosters a strong sense of community among house residents</li>
-                            <li>Facilitate resident involvement in house life and create an environment that enhances personal and academic success</li>
-                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Leadership</h2>
+                    <h2>Professional Development</h2>
                     <div class="experience-item">
                         <div class="item-header">
                             <span class="item-title">Secretary & RA Liaison - Dorm House Council</span>
@@ -948,11 +972,11 @@
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h3>Programming</h3>
-                            <p>Python</p>
+                            <p>Python, C0/C, Standard ML</p>
                         </div>
                         <div class="skill-category">
                             <h3>Tools</h3>
-                            <p>LaTeX, Microsoft Office</p>
+                            <p>LaTeX, Microsoft Office, Google Workspace</p>
                         </div>
                         <div class="skill-category">
                             <h3>Languages</h3>
@@ -960,7 +984,7 @@
                         </div>
                         <div class="skill-category">
                             <h3>Interests</h3>
-                            <p>Discrete Mathematics, Financial Mathematics, Computer Science</p>
+                            <p>Combinatorics, Financial Mathematics, Computer Science</p>
                         </div>
                     </div>
                 </section>
@@ -1002,10 +1026,10 @@
                     </div>
                 </section>
 
-                    <div class="project-item">
+                    <!-- <div class="project-item">
                         <h3>1 Hour Crossy Road AI Challenge</h3>
                         <p>This project was an assignment for which I had one hour to create a copy of Crossy Road using AI prompting. The objective was to explore the different ways you can give an AI engine a task and which is most efficient. <a href="https://github.com/lvannett/lvannett.15113-hw2-crossy-road">Here</a> you can take a look at the prompts I used and the code I ended up with!</p>
-                    </div>
+                    </div> -->
                     <div class="project-item">
                         <h3>Purr-gramming with APIs</h3>
                         <p>For this project, I used AI to integrate two APIs to create an app that generates random cat facts and images. The first API provided random cat images, while the second API delivered random cat facts. <a href="https://github.com/lvannett/lvannett.api-assignment">Here</a> you can see the code to this app as well as a README file and prompt log explaining the process of integrating APIs with AI assistance.</p>
@@ -1028,9 +1052,9 @@
                 <section>
                     <h2>Contact Methods</h2>
                     <div class="contact-methods">
-                        <a class="contact-method" href="https://mail.google.com/mail/?view=cm&fs=1&to=lvannette18@gmail.com&su=Contact%20from%20Website" target="_blank">
+                        <a class="contact-method" href="https://mail.google.com/mail/?view=cm&fs=1&to=lvannett@andrew.cmu.edu&su=Contact%20from%20Website" target="_blank">
                             <h3>📧 Email</h3>
-                            <p>lvannette18@gmail.com</p>
+                            <p>lvannett@andrew.cmu.edu</p>
                         </a>
                         <div class="contact-method">
                             <h3>📱 Phone</h3>
